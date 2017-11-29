@@ -3,7 +3,8 @@ package com.Boysband;
 public class ShippingCostsCalculator {
     public enum Destination {
         France(0.0, 0.0),
-        Monaco(8.7, 0.0);
+        Monaco(8.7, 0.0),
+        DOMTOM(5.4, 1.26);
 
         private double multiplyBy;
         private double add;
