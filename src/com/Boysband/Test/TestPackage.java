@@ -36,7 +36,15 @@ public class TestPackage {
 
             { 653, 133, 271, 2.132d, ShippingCostsCalculator.Destination.Monaco, 50.10 },
 
-            { 653, 331, 271, 3.650d, ShippingCostsCalculator.Destination.Monaco, 91.05 }
+            { 653, 331, 271, 3.650d, ShippingCostsCalculator.Destination.Monaco, 91.05 },
+
+            { 191, 123, 18,  2.354d, ShippingCostsCalculator.Destination.DOMTOM, 13.91 },
+
+            { 253, 215, 164, 1.565d, ShippingCostsCalculator.Destination.DOMTOM, 33.29 },
+
+            { 653, 133, 271, 2.132d, ShippingCostsCalculator.Destination.DOMTOM, 49.84 },
+
+            { 653, 331, 271, 3.650d, ShippingCostsCalculator.Destination.DOMTOM, 89.54 }
     };
 
     private int height;
