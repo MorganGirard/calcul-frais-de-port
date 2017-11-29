@@ -2,6 +2,7 @@ package com.Boysband.Test;
 
 
 import com.Boysband.Package;
+import com.Boysband.ShippingCostsCalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -20,31 +21,31 @@ public class TestPackage {
     }
 
     private static final Object[][] testParameters = new Object[][]{
-            { 191, 123, 18,  2.354d, "FR", "12.00" },
+            { 191, 123, 18,  2.354d, ShippingCostsCalculator.Destination.France, 12.00 },
 
-            { 253, 215, 164, 1.565d, "FR", "30.39" },
+            { 253, 215, 164, 1.565d, ShippingCostsCalculator.Destination.France, 30.39 },
 
-            { 653, 133, 271, 2.132d, "FR", "46.09" },
+            { 653, 133, 271, 2.132d, ShippingCostsCalculator.Destination.France, 46.09 },
 
-            { 653, 331, 271, 3.650d, "FR", "83.76" },
+            { 653, 331, 271, 3.650d, ShippingCostsCalculator.Destination.France, 83.76 },
 
-            { 123, 191, 18,  2.354d, "MC", "13.04" },
+            { 191, 123, 18,  2.354d, ShippingCostsCalculator.Destination.Monaco, 13.04 },
 
-            { 253, 215, 164, 1.565d, "MC", "33.03" },
+            { 253, 215, 164, 1.565d, ShippingCostsCalculator.Destination.Monaco, 33.03 },
 
-            { 653, 133, 271, 2.132d, "MC", "50.10" },
+            { 653, 133, 271, 2.132d, ShippingCostsCalculator.Destination.Monaco, 50.10 },
 
-            { 653, 331, 271, 3.650d, "MC", "91.05" }
+            { 653, 331, 271, 3.650d, ShippingCostsCalculator.Destination.Monaco, 91.05 }
     };
 
     private int height;
     private int width;
     private int depth;
     private double weight;
-    private String country;
-    private String expected;
+    private ShippingCostsCalculator.Destination country;
+    private Double expected;
 
-    public TestPackage(int height, int width, int depth, double weight,String country, String expected) {
+    public TestPackage(int height, int width, int depth, double weight,ShippingCostsCalculator.Destination country, Double expected) {
         this.height = height;
         this.width = width;
         this.depth = depth;
@@ -56,7 +57,7 @@ public class TestPackage {
     @Test
     public void good_price_for_package () {
         Package pack = new Package(height,width,depth,weight);
-        assertEquals(Double.parseDouble(expected), pack.calculateLocalShippingCost(),0.005);
+        assertEquals(expected, ShippingCostsCalculator.calculateShippingCost(pack,country),0.005);
     }
 
 }
