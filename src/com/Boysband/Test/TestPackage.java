@@ -2,6 +2,7 @@ package com.Boysband.Test;
 
 
 import com.Boysband.Package;
+import com.Boysband.PackageFactory;
 import com.Boysband.ShippingCostsCalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,7 +57,7 @@ public class TestPackage {
 
     @Test
     public void good_price_for_package () {
-        Package pack = new Package(height,width,depth,weight);
+        Package pack = PackageFactory.createPackage(height,width,depth,weight);
         assertEquals(expected, ShippingCostsCalculator.calculateShippingCost(pack,country),0.005);
     }
 
