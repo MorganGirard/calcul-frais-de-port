@@ -58,7 +58,7 @@ public class TestPackage {
     @Test
     public void good_price_for_package () {
         Package pack = PackageFactory.createPackage(height,width,depth,weight);
-        assertEquals(expected, ShippingCostsCalculator.calculateShippingCost(pack,country),0.005);
+        assertEquals(expected, ShippingCostsCalculator.calculateShippingCost(pack,country),0.006);
     }
 
 }
